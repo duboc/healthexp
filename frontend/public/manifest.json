@@ -1,0 +1,9 @@
+{
+  "short_name": "InBody Tracker",
+  "name": "InBody Measurement Tracker",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1976d2",
+  "background_color": "#f5f5f5"
+}

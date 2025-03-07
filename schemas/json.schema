@@ -1,0 +1,265 @@
+{
+  "type": "object",
+  "description": "Dados essenciais do relatório InBody para análise de evolução corporal",
+  "properties": {
+    "informacoes_basicas": {
+      "type": "object",
+      "description": "Informações básicas de identificação",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "description": "Nome do paciente",
+          "nullable": true
+        },
+        "id": {
+          "type": "string",
+          "description": "ID do paciente",
+          "nullable": true
+        },
+        "data_exame": {
+          "type": "string",
+          "description": "Data e hora da realização do exame",
+          "nullable": true
+        },
+        "idade": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Idade do paciente em anos",
+          "nullable": true
+        },
+        "sexo": {
+          "type": "string",
+          "description": "Sexo do paciente",
+          "nullable": true
+        },
+        "altura": {
+          "type": "number",
+          "format": "float",
+          "description": "Altura do paciente em cm",
+          "nullable": true
+        }
+      },
+      "required": ["nome", "id", "data_exame"]
+    },
+    "composicao_corporal": {
+      "type": "object",
+      "description": "Métricas principais de composição corporal",
+      "properties": {
+        "peso": {
+          "type": "number",
+          "format": "float",
+          "description": "Peso total em kg",
+          "nullable": true
+        },
+        "agua_corporal_total": {
+          "type": "number",
+          "format": "float",
+          "description": "Água corporal total em L",
+          "nullable": true
+        },
+        "proteina": {
+          "type": "number",
+          "format": "float",
+          "description": "Proteína em kg",
+          "nullable": true
+        },
+        "minerais": {
+          "type": "number",
+          "format": "float",
+          "description": "Minerais em kg",
+          "nullable": true
+        },
+        "massa_gordura": {
+          "type": "number",
+          "format": "float",
+          "description": "Massa de gordura em kg",
+          "nullable": true
+        },
+        "massa_muscular_esqueletica": {
+          "type": "number",
+          "format": "float",
+          "description": "Massa muscular esquelética em kg",
+          "nullable": true
+        },
+        "massa_livre_gordura": {
+          "type": "number",
+          "format": "float",
+          "description": "Massa livre de gordura em kg",
+          "nullable": true
+        }
+      },
+      "required": ["peso", "massa_muscular_esqueletica", "massa_gordura"]
+    },
+    "indices_corporais": {
+      "type": "object",
+      "description": "Índices e percentuais corporais",
+      "properties": {
+        "imc": {
+          "type": "number",
+          "format": "float",
+          "description": "Índice de Massa Corporal (IMC) em kg/m²",
+          "nullable": true
+        },
+        "pgc": {
+          "type": "number",
+          "format": "float",
+          "description": "Percentual de gordura corporal (%)",
+          "nullable": true
+        },
+        "taxa_metabolica_basal": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Taxa Metabólica Basal em kcal",
+          "nullable": true
+        },
+        "relacao_cintura_quadril": {
+          "type": "number",
+          "format": "float",
+          "description": "Relação Cintura-Quadril",
+          "nullable": true
+        },
+        "nivel_gordura_visceral": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Nível de gordura visceral",
+          "nullable": true
+        },
+        "grau_obesidade": {
+          "type": "number",
+          "format": "float",
+          "description": "Grau de obesidade em percentual",
+          "nullable": true
+        }
+      },
+      "required": ["imc", "pgc"]
+    },
+    "analise_segmentar": {
+      "type": "object",
+      "description": "Análise segmentar simplificada",
+      "properties": {
+        "massa_magra": {
+          "type": "object",
+          "description": "Massa magra por segmento (kg)",
+          "properties": {
+            "braco_esquerdo": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa magra do braço esquerdo em kg",
+              "nullable": true
+            },
+            "braco_direito": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa magra do braço direito em kg",
+              "nullable": true
+            },
+            "tronco": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa magra do tronco em kg",
+              "nullable": true
+            },
+            "perna_esquerda": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa magra da perna esquerda em kg",
+              "nullable": true
+            },
+            "perna_direita": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa magra da perna direita em kg",
+              "nullable": true
+            }
+          },
+          "required": []
+        },
+        "massa_gorda": {
+          "type": "object",
+          "description": "Massa gorda por segmento (kg)",
+          "properties": {
+            "braco_esquerdo": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa gorda do braço esquerdo em kg",
+              "nullable": true
+            },
+            "braco_direito": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa gorda do braço direito em kg",
+              "nullable": true
+            },
+            "tronco": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa gorda do tronco em kg",
+              "nullable": true
+            },
+            "perna_esquerda": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa gorda da perna esquerda em kg",
+              "nullable": true
+            },
+            "perna_direita": {
+              "type": "number",
+              "format": "float",
+              "description": "Massa gorda da perna direita em kg",
+              "nullable": true
+            }
+          },
+          "required": []
+        }
+      },
+      "required": []
+    },
+    "pontuacao_inbody": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Pontuação InBody (0-100)",
+      "nullable": true
+    },
+    "controle_peso": {
+      "type": "object",
+      "description": "Recomendações de controle de peso",
+      "properties": {
+        "peso_ideal": {
+          "type": "number",
+          "format": "float",
+          "description": "Peso ideal em kg",
+          "nullable": true
+        },
+        "controle_peso": {
+          "type": "number",
+          "format": "float",
+          "description": "Ajuste de peso recomendado em kg",
+          "nullable": true
+        },
+        "controle_gordura": {
+          "type": "number",
+          "format": "float",
+          "description": "Ajuste de gordura recomendado em kg",
+          "nullable": true
+        },
+        "controle_musculo": {
+          "type": "number",
+          "format": "float",
+          "description": "Ajuste de músculo recomendado em kg",
+          "nullable": true
+        }
+      },
+      "required": []
+    },
+    "modelo_inbody": {
+      "type": "string",
+      "description": "Modelo do equipamento InBody utilizado",
+      "nullable": true
+    }
+  },
+  "required": [
+    "informacoes_basicas",
+    "composicao_corporal",
+    "indices_corporais"
+  ]
+}
